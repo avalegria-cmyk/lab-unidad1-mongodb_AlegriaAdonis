@@ -1,0 +1,4 @@
+//USO DE LA BASE DE DATOS
+use('techstore')
+//LIMPIEZA DE REGISTROS
+db.productos.drop();

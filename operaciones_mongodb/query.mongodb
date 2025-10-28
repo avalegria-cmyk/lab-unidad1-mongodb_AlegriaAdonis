@@ -1,0 +1,17 @@
+use('techstore')
+
+//  Mostrar todos los productos
+db.productos.find();
+
+// Mostrar solo los productos tipo "Laptop"
+db.productos.find({ tipo_producto: "Laptop" });
+
+// Mostrar productos con más de 10 unidades en stock y precio menor a 1000
+db.productos.find({ stock: { $gt: 10 }, precio: { $lt: 1000 } });
+
+// Mostrar solo nombre, precio y stock de los "Smartphone"
+db.productos.find(
+  { tipo_producto: "Smartphone" },
+  { _id: 0, nombre: 1, precio: 1, stock: 1 }
+);
+

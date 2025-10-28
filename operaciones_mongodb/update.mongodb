@@ -1,0 +1,17 @@
+use('techstore')
+// Se vendió un Smartphone → reducir stock en 1 unidad
+db.productos.updateOne(
+  { sku: "SPH-001" },
+  { $inc: { stock: -1 } }
+);
+
+// El precio de la Laptop ha subido → actualizar precio y registrar última revisión
+db.productos.updateOne(
+  { sku: "LPT-002" },
+  {
+    $set: {
+      precio: 1350,
+      ultima_revision: new Date()
+    }
+  }
+);
